@@ -1,4 +1,4 @@
-public class EmailNotifier implements Notifier{
+public class EmailNotifier implements Notify{
     private final EmailClient client;
 
     EmailNotifier(EmailClient client) { 
