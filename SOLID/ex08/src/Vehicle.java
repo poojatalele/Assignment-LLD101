@@ -1,5 +1,7 @@
-public interface Vehicle {
-    void startEngine();
-    void pedal(int effort);
-    void recharge(int kWh);
+public class Vehicle {
+    private String type;
+
+    public Vehicle(String type){
+        this.type=type;
+    }
 }

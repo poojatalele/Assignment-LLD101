@@ -1,5 +1,9 @@
 public class Bird {
-     void fly(){
-         System.out.println("Flap!"); 
-        } 
+    private final String name;
+    public Bird(String name) { 
+        this.name = name; 
     }
+    public String name() {
+        return name; 
+    }
+}
