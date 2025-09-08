@@ -1,19 +1,31 @@
 package com.example.render;
+import org.w3c.dom.Text;
 
 public class Glyph {
     // Smell: style stored per instance → not memory efficient
     private final char ch;
-    private final String font;
-    private final int size;
-    private final boolean bold;
+    private final TextStyle ts;
 
-    public Glyph(char ch, String font, int size, boolean bold) {
-        this.ch = ch; this.font = font; this.size = size; this.bold = bold;
+    public Glyph(char ch, TextStyle ts) {
+        this.ch = ch;
+        this.ts = ts;
     }
 
-    public int drawCost() { return size + (bold ? 10 : 0); }
-    public char getCh() { return ch; }
-    public String getFont() { return font; }
-    public int getSize() { return size; }
-    public boolean isBold() { return bold; }
+    public int drawCost() { 
+        return ts.getSize() + (ts.isBold() ? 10 : 0); 
+    }
+    
+    public char getCh() { 
+        return ch; 
+    }
+
+    public String getFont() { 
+        return ts.getFont(); 
+    }
+    public int getSize() { 
+        return ts.getSize(); 
+    }
+    public boolean isBold() { 
+        return ts.isBold(); 
+    }
 }
